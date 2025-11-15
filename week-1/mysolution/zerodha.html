@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zerodha Home Page</title>
+    <style>
+        .navbar{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 1.2rem;
+            border-bottom: solid rgb(245, 245, 245);
+        }
+        .navlink{
+            display: flex;
+            justify-content: space-around;
+        }
+        .navlink li{
+            margin-left: 2rem;
+            list-style-type: none;
+            color: rgb(114, 114, 114);
+        }
+        .logo img{
+            height: 1rem;
+        }
+
+        .hero{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .heroimg img{
+            height: 21rem;
+            margin-top: 5rem;
+        }
+        .info{
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            color: rgb(58, 58, 58);
+            margin-top: 2rem;
+        }
+
+        .info p{
+            margin-top: -.5rem;
+        }
+
+        button{
+            background-color: #387ed1;
+            color: aliceblue;
+            border: none;
+            padding: .9rem;
+            font-size: larger;
+            margin-top: 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://zerodha.com/static/images/logo.svg">
+        </div>
+        <div class="navlink">
+            <li>Signup</li>
+            <li>About</li>
+            <li>Products</li>
+            <li>Pricing</li>
+            <li>Support</li>
+        </div>
+    </nav>
+    <hero class="hero">
+        <div class="heroimg">
+            <img src="https://zerodha.com/static/images/landing.svg" alt="Zerodha dashboard">
+        </div>
+        <div class="info">
+            <h1>Invest in everything</h1>
+            <p>Online platform to invest in stocks, derivatives, mutual funds, ETFs, bonds, and more.</p>
+        </div>
+        <div>
+            <button>
+                Sign up for free
+            </button>
+        </div>
+    </hero>
+    
+</body>
+</html>
