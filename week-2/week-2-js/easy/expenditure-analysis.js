@@ -14,7 +14,10 @@
 */
 
 function calculateTotalSpentByCategory(transactions) {
-  return [];
+
+  console.log("Hello ans " ,transactions)
+
+  return transactions;
 }
 
 module.exports = calculateTotalSpentByCategory;
