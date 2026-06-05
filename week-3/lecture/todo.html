@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Get element -->
+
+    <!-- update element -->
+
+    <!-- delete element -->
+
+    <!-- add element -->
+
+    <input type="text" name="" id="input-value">
+    <button onclick="add()">Add</button>
+
+
+
+
+    
+</body>
+
+
+<script>
+
+    let inputValue = document.querySelector("input")
+
+    function add(){
+        let divEl =  document.createElement("div");
+
+        divEl.innerHTML=`
+        <div>
+            ${inputValue.value} 
+            <button onclick="this.parentElement.remove()"> delete </button>        <div>`
+
+
+        document.querySelector("body").appendChild(divEl)
+    }
+
+
+
+</script>
+</html>

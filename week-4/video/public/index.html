@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+   
+    <title>Document</title>
+</head>
+<body>
+
+    <h3>Calculator</h3>
+    <br>
+
+        <input type="number" id="a" placeholder="firstvalue"></input>
+
+        <input type="number" id="b" placeholder="second value"></input>
+
+        <br>
+        <br>
+        Answer :<div id="answer"> </div>
+        <br>
+        <br>
+
+        <div id="operation">
+            <button onclick="sendRequest('add')">Add</button>
+            <button onclick="sendRequest('multiply')">Multiply</button>
+        </div>
+
+
+    <script>
+
+        async function sendRequest(operation){
+            let url = "http://localhost:3000/";
+
+            if(operation == 'add') url+= "add"
+            else if(operation == 'multiply') url += "multiply"
+
+            let a = document.getElementById("a").value;
+            let b =  document.getElementById("b").value;
+
+            const response = await axios.get(url, {
+                a :a,
+                b : b
+            })
+
+            const data = await response.json();
+
+            document.getElementById("answer").innerHTML = data.data;
+
+        }
+
+
+    </script>
+    
+</body>
+</html>
