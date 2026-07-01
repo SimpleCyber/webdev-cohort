@@ -6,10 +6,21 @@ const app = express();
 
 app.use(express.json());
 
+
 const users = [];
 
+function logger (req, res, next) {
+    console.log(req.method);
+    next();
+}
+
+
+app.get("/",(req,res)=>{
+    res.sendFile(__dirname + "/learn-frontend-jwt/index.html")
+})
+
 // signup
-app.post("/signup", (req,res)=>{
+app.post("/signup",logger, (req,res)=>{
     const username  = req.body.username;
     const password = req.body.password;
 
@@ -28,7 +39,7 @@ app.post("/signup", (req,res)=>{
 
 
 // sighin
-app.post("/signin", (req,res)=>{
+app.post("/signin",logger,  (req,res)=>{
     const username  = req.body.username;
     const password = req.body.password;
 
@@ -59,7 +70,7 @@ app.post("/signin", (req,res)=>{
 
 
 // me
-app.get("/get-password", (req,res)=>{
+app.get("/get-password", logger, (req,res)=>{
     const token = req.headers.token;
     const decodedData =  jwt.verify(token, JWT_SECRET);
 
