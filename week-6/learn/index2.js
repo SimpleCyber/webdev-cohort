@@ -72,6 +72,14 @@ app.post("/signin",logger,  (req,res)=>{
 // me
 app.get("/get-password", logger, (req,res)=>{
     const token = req.headers.token;
+
+    if (!token) {
+        return res.status(401).json({
+        message: "Token missing"
+        });
+    }
+
+
     const decodedData =  jwt.verify(token, JWT_SECRET);
 
     if(decodedData.username){
@@ -90,5 +98,6 @@ app.get("/get-password", logger, (req,res)=>{
 
     }
 })
+
 
 app.listen(3000);

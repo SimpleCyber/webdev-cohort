@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3001/todos';
+const API_URL = 'http://localhost:3000/todos';
 
 // Fetch existing todos when the page loads
 document.addEventListener('DOMContentLoaded', () => {
